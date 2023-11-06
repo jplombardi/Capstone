@@ -11,10 +11,6 @@ public class BuildOccupancyGrid : MonoBehaviour
     public float gridOffset = 0.5f;
     public Vector3 gridOrigin = Vector3.zero;
     public GameObject[,] occupancyGrid;
-    public Color unknownColor = Color.gray;
-    public Color safeColor = Color.white;
-    public Color obstacleColor = Color.black;
-    public Color fireColor = Color.red;
 
     // Start is called before the first frame update
     void Start()
@@ -37,14 +33,17 @@ public class BuildOccupancyGrid : MonoBehaviour
         }
     }
 
-    public void UpdateGridSpaceVector3(Vector3 coord)
+    public void UpdateGridSpaceVector3(Vector3 coord, GridController.gridState state)
     {
         //Given a vector3, find the associated grid space, change to color or and update status (danger value?)
         int xpos = Mathf.RoundToInt(coord.x / gridOffset); //Now it's normalized to the grid spacing.
         int zpos = Mathf.RoundToInt(coord.z / gridOffset);
 
-        occupancyGrid[xpos, zpos].GetComponent<Material>().SetColor("_Color", fireColor);
-        
+        if((0 <= xpos  && xpos <= sizeX-1) && (0 <= zpos && zpos <= sizeZ-1)) // then we have a valid position!
+        {
+            occupancyGrid[xpos, zpos].SendMessage("UpdateState", state); // :)
+        }
+        //else we're out of bounds for the current grid. 
     }
 
 }

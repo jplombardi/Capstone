@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &682331873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 682331874}
+  - component: {fileID: 682331875}
+  m_Layer: 0
+  m_Name: Sensor Fusion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &682331874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682331873}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1249865403}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &682331875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682331873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759a8947312e3c241a748f07eb83fa61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lidar: {fileID: 2000163942357363929}
+  _radar: {fileID: 0}
+  _thermal: {fileID: 0}
+  _camera: {fileID: 0}
+  _grid: {fileID: 1913814478}
+  processorFrequency: 4
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,13 +397,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12, y: 1.66, z: -10}
+  m_LocalRotation: {x: 0.29878032, y: -0.64088243, z: 0.29878032, w: 0.64088243}
+  m_LocalPosition: {x: 10, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 49.99, y: -90, z: 0}
 --- !u!4 &1207444332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7042684924235396060, guid: 886c04d8c4f76594bb61f94759038f1d, type: 3}
@@ -384,12 +434,13 @@ Transform:
   m_GameObject: {fileID: 1249865402}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 5, z: -10}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1207444332}
   - {fileID: 796504333}
+  - {fileID: 682331874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1913545587
@@ -491,7 +542,7 @@ Transform:
   m_GameObject: {fileID: 1913545587}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.41, y: 6, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.125, y: 5, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -532,10 +583,6 @@ MonoBehaviour:
   sizeZ: 10
   gridOffset: 0.5
   gridOrigin: {x: 0, y: 0, z: 0}
-  unknownColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  safeColor: {r: 1, g: 1, b: 1, a: 1}
-  obstacleColor: {r: 0, g: 0, b: 0, a: 1}
-  fireColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1913814479
 Transform:
   m_ObjectHideFlags: 0
@@ -545,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 1913814477}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -562,6 +609,10 @@ PrefabInstance:
     - target: {fileID: 2962604284352490835, guid: 886c04d8c4f76594bb61f94759038f1d, type: 3}
       propertyPath: m_Name
       value: LIDAR Module
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861150049761228695, guid: 886c04d8c4f76594bb61f94759038f1d, type: 3}
+      propertyPath: rangeMeters
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7042684924235396060, guid: 886c04d8c4f76594bb61f94759038f1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -608,6 +659,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 886c04d8c4f76594bb61f94759038f1d, type: 3}
+--- !u!114 &2000163942357363929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3861150049761228695, guid: 886c04d8c4f76594bb61f94759038f1d, type: 3}
+  m_PrefabInstance: {fileID: 2000163942357363928}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec62626508043934eb41c2fbb73359d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

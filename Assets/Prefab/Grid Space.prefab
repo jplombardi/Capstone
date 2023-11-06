@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 9165718552345668384}
   - component: {fileID: 4918143843989563267}
   - component: {fileID: 2446426020972298484}
+  - component: {fileID: 3539437017529250419}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Grid Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 872b292c4678b35429e25e106a0d3668, type: 2}
+  - {fileID: 2100000, guid: ab088b8b591e4f340b6a7e5546b3132a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +84,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3539437017529250419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693476026065866791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdabf15e43360342b09a02b8a51a6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 0}
+  obstacleProbability: 0
+  unknownColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  safeColor: {r: 1, g: 1, b: 1, a: 1}
+  obstacleColor: {r: 0, g: 0, b: 0, a: 1}
+  fireColor: {r: 1, g: 0, b: 0, a: 1}
